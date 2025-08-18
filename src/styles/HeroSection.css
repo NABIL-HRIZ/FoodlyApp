@@ -18,7 +18,7 @@
 .chef-card {
   grid-column: 1 / span 2;
   grid-row: 1 / span 3;
-  background: linear-gradient(135deg, #ff6b6b, #ff4d4d);
+  background: linear-gradient(135deg, #ff6b6b,#ED775A);
   border-radius: 30px;
   padding: 25px;
   display: flex;
@@ -73,7 +73,7 @@
 .yummy-card {
   grid-column: 1 / span 2;
   grid-row: 4 / span 1;
-  background: linear-gradient(135deg, #ff9a3d, #ff7b00);
+  background: linear-gradient(135deg, #ff613d,#FAD691);
   border-radius: 30px;
   display: flex;
   flex-direction: column;
@@ -146,12 +146,14 @@
   letter-spacing: 1px;
   z-index: 1;
   margin: 0;
-  top: 20%;
+  top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0.8;
-  white-space: nowrap;
-}
+ width: 100%;
+ text-align: center;
+ color: #fff !important;
+ }
 
 .hero-content {
   width: 100%;
