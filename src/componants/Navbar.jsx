@@ -1,13 +1,14 @@
 import React from 'react'
 import logo_icon from '../assets/logo_icon.webp'
 import '../styles/Navbar.css'
+import { Link } from 'react-router-dom'
 const Navbar = () => {
   return (
    <nav className="navbar navbar-expand-lg custom-navbar">
-      <a className="navbar-brand d-flex align-items-center" href="#">
+      <Link className="navbar-brand d-flex align-items-center" to="/">
         <img src={logo_icon} alt="logo" className="logo-img" />
         <span className="brand-text">Foodly_App</span>
-      </a>
+      </Link>
 
       <button 
         className="navbar-toggler" 
@@ -24,20 +25,18 @@ const Navbar = () => {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav ms-auto align-items-lg-center w-100">
           <li className="nav-item">
-            <a className="nav-link" href="#"><i className="fa-solid fa-house"></i> Accueil</a>
+            <Link className="nav-link" to={'/'}><i className="fa-solid fa-house"></i> Accueil</Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#"><i className="fa-solid fa-clipboard-list"></i> Restaurants</a>
+            <Link className="nav-link"  to={'/restaurants'}><i className="fa-solid fa-clipboard-list"></i> Restaurants</Link>
           </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#"><i className="fa-solid fa-star"></i> A propos</a>
-          </li>
+          
 
           
           <li className="nav-item ">
-            <a className="nav-link cart-link" href="#">
+            <Link className="nav-link cart-link" to="/cart">
               <i className="fa-solid fa-cart-shopping"></i>
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
