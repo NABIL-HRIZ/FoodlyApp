@@ -14,6 +14,7 @@ import Footer from './componants/Footer';
 import Restaurants from './componants/Restaurants';
 import ListRestaurants from './componants/ListRestaurants';
 import WhatsappButton from './componants/WhatsappButton';
+import MenuRestaurant from './componants/MenuRestaurant';
 const App = () => {
   return (
     
@@ -41,6 +42,8 @@ const App = () => {
           </>
           
           } />
+
+          <Route path='/menu/:id' element={<MenuRestaurant />} />
 
      </Routes>
      

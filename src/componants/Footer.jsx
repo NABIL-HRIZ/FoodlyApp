@@ -5,18 +5,18 @@ const Footer = () => {
   return (
     <div className='footer-section'>
         <div className='footer-content'>
- <ul class="wrapper">
-    <li class="icon facebook">
-      <span><i class="fab fa-facebook-f"></i></span>
+ <ul className="wrapper">
+    <li className="icon facebook">
+      <span><i className="fab fa-facebook-f"></i></span>
     </li>
-    <li class="icon youtube">
-      <span><i class="fab fa-youtube"></i></span>
+    <li className ="icon youtube">
+      <span><i className="fab fa-youtube"></i></span>
     </li>
-    <li class="icon tiktok">
-      <span><i class="fab fa-tiktok"></i></span>
+    <li className="icon tiktok">
+      <span><i className="fab fa-tiktok"></i></span>
     </li>
-    <li class="icon instagram">
-      <span><i class="fab fa-instagram"></i></span>
+    <li className="icon instagram">
+      <span><i className="fab fa-instagram"></i></span>
     </li>
   </ul>
             </div>
