@@ -14,6 +14,7 @@ import Footer from './componants/Footer';
 import Restaurants from './componants/Restaurants';
 import ListRestaurants from './componants/ListRestaurants';
 import WhatsappButton from './componants/WhatsappButton';
+import MenuHeroRestaurant from './componants/MenuHeroRestaurant';
 import MenuRestaurant from './componants/MenuRestaurant';
 const App = () => {
   return (
@@ -43,7 +44,13 @@ const App = () => {
           
           } />
 
-          <Route path='/menu/:id' element={<MenuRestaurant />} />
+          <Route path='/menu/:restaurantsId' element={
+            <>
+            <MenuHeroRestaurant />
+            <MenuRestaurant />
+            </>
+            
+            } />
 
      </Routes>
      

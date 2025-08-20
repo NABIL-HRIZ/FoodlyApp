@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/ListRestaurants.css'; 
-import { Link, useParams } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import img_restaurant1 from '../assets/rest-1.jpg'
 import img_restaurant2 from '../assets/rest-2.jpg'
 import img_restaurant3 from '../assets/rest-3.jpg'
@@ -8,10 +8,10 @@ import img_restaurant4 from '../assets/rest-4.jpg'
 import img_restaurant5 from '../assets/rest-5.jpg'
 
 
-const {restaurantsId}=useParams()
 
 
 const ListRestaurants = () => {
+
 
     const restaurantsImage=[img_restaurant1,img_restaurant2,img_restaurant3,img_restaurant4,img_restaurant5];
 
@@ -25,7 +25,7 @@ const ListRestaurants = () => {
     const fetchRestaurants = async () => {
       const cached = localStorage.getItem('restaurants');
       if (cached) {
-        setRestaurants(JSON.parse(cached));
+        setRestaurants(JSON.parse(cached).slice(0, 20));
         return;
       }
 
@@ -41,7 +41,7 @@ const ListRestaurants = () => {
       try {
         const response = await fetch(url, options);
         const result = await response.json();
-        const restaurantsData = result.data.data || [];
+        const restaurantsData = (result.data.data || []).slice(0,20);
         setRestaurants(restaurantsData);
         localStorage.setItem('restaurants', JSON.stringify(restaurantsData));
       } catch (error) {

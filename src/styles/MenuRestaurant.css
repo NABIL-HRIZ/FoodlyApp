@@ -1,0 +1,81 @@
+.menu-restaurant-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  align-items: flex-start;
+}
+
+/* Left Filter */
+.menu-filter {
+  flex: 0 0 200px; /* fixed width */
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.menu-filter h2 {
+  margin-bottom: 15px;
+}
+
+.menu-filter label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.menu-filter select {
+  width: 100%;
+  padding: 5px 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Center Menu Items */
+.menu-items {
+  flex: 1; /* take remaining space */
+  padding: 10px;
+}
+
+.menu-category {
+  margin-bottom: 25px;
+  padding: 15px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.menu-category h2 {
+  margin-bottom: 10px;
+}
+
+.menu-category ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.menu-category li {
+  padding: 5px 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* Right Cart */
+.menu-restaurant-cart {
+  flex: 0 0 220px;
+  background: #f3f3f3;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.menu-restaurant-cart i {
+  font-size: 40px;
+  color: #777;
+  margin: 10px 0;
+}
+
+.menu-restaurant-cart p {
+  color: #555;
+}

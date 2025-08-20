@@ -1,0 +1,123 @@
+.menu-hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: hidden;
+  font-family: "Protest Riot", sans-serif;
+}
+
+.menu-hero-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.2));
+  z-index: 0;
+}
+
+.menu-hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+  max-width: 800px;
+  padding: 2rem;
+  backdrop-filter: blur(10px) saturate(180%);
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  animation: fadeInUp 1s ease forwards;
+}
+
+.menu-restaurant-image-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.menu-restaurant-logo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid rgba(255,255,255,0.8);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+}
+
+.menu-restaurant-logo:hover {
+  transform: scale(1.08);
+}
+
+.menu-restaurant-title {
+  font-size:4rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.menu-rating-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.8rem 0;
+  font-size: 1.1rem;
+}
+
+.menu-rating-stars {
+  font-size: 1.5rem;
+  color: #FFD700;
+  margin-right: 0.5rem;
+}
+
+.menu-rating-text {
+  color: #ddd;
+  font-size: 0.95rem;
+}
+
+.menu-cuisine-tags {
+  margin-top: 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+}
+
+.menu-cuisine-tag {
+  background: rgba(172, 48, 24, 0.975);
+  padding: 0.4rem 0.9rem;
+  border-radius: 25px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #fff;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+.cuisine-tag:hover {
+  background: #fff;
+  color: #000;
+  transform: translateY(-2px);
+}
+
+/* === Animations === */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
