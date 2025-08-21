@@ -11,6 +11,7 @@
   background-attachment: fixed;
   overflow: hidden;
   font-family: "Protest Riot", sans-serif;
+  margin:60px auto;
 }
 
 .menu-hero-section::after {

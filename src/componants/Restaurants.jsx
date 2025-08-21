@@ -5,7 +5,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import '../styles/Restaurants.css';
 
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Autoplay} from 'swiper/modules';
 
 import '../styles/Restaurants.css'
 import rest1 from '../assets/hero-slider-1.jpg'
@@ -23,11 +23,11 @@ const Restaurants = () => {
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          delay: 2500,
+          delay: 1500,
           disableOnInteraction: false,
         }}
-        navigation={true}
-        modules={[Autoplay, Pagination, Navigation]}
+        
+        modules={[Autoplay]}
         className="mySwiper"
       >
              <SwiperSlide>
