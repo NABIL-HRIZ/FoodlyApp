@@ -32,7 +32,7 @@ const MenuRestaurant = () => {
 
   useEffect(() => {
     const fetchMenu = async () => {
-      const menuData = await (await fetch('/menu_data.json')).json();
+  const menuData = await (await fetch(`${import.meta.env.BASE_URL}menu_data.json`)).json();
       setData(menuData.find(item => item.restaurant_id === restaurantsId));
     };
     fetchMenu();

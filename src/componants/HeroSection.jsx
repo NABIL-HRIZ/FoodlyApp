@@ -20,14 +20,10 @@ const HeroSection = () => {
         
        <div className="div3">
           <div className="hero-image-container">
-            <img src={hero_img} alt="Hero" className="hero-image" />
+            <img src={hero_img} alt="Hero" className="hero-image"/>
             <h2 className="behind-image">Foodie App !</h2>
           </div>
-          <div className="hero-content">
-            <h5>Des plats faits avec amour</h5>
-            <h4>24h/24</h4>
-            <h5>Quotidien</h5>
-          </div>
+        
         </div>
       </div>
     </div>

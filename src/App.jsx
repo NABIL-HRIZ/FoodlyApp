@@ -16,6 +16,7 @@ import ListRestaurants from './componants/ListRestaurants';
 import WhatsappButton from './componants/WhatsappButton';
 import MenuHeroRestaurant from './componants/MenuHeroRestaurant';
 import MenuRestaurant from './componants/MenuRestaurant';
+import StartFromTheTop from './componants/StartFromTheTop';
 const App = () => {
 
 
@@ -24,7 +25,7 @@ const App = () => {
     
     <>
   <Router basename="/FoodlyApp">
-
+  <StartFromTheTop />
      <Navbar />
    <WhatsappButton />
      <Routes>

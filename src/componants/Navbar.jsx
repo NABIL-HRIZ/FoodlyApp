@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import logo_icon from '../assets/logo_icon.webp';
 import '../styles/Navbar.css';
 import { Link } from 'react-router-dom';
@@ -17,11 +17,13 @@ const Navbar = () => {
 
   const total = cart.reduce((sum, item) => sum + item.dish_price, 0).toFixed(2);
 
+
+ 
   return (
     <nav className="navbar navbar-expand-lg custom-navbar fixed-top">
       <Link className="navbar-brand d-flex align-items-center" to="/">
         <img src={logo_icon} alt="logo" className="logo-img" />
-        <span className="brand-text">Foodly_App</span>
+        <span className="brand-text" >Foodly_App</span>
       </Link>
 
       <button
@@ -83,7 +85,7 @@ const Navbar = () => {
                         </div>
                       ))}
                       <h4 style={{ fontFamily: '"Protest Riot", sans-serif' }}>Total: ${total}</h4>
-                      <Button variant="danger" onClick={() => dispatch(clearCart())}>Vider le panier</Button>
+                      <Button variant="danger" style={{ fontFamily: '"Protest Riot", sans-serif' }}  onClick={() => dispatch(clearCart())}>Vider le panier</Button>
                     </>
                   )}
                 </Modal.Body>

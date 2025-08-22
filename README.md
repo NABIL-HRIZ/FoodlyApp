@@ -1,12 +1,79 @@
-# React + Vite
+# FoodlyApp
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Technologies utilisées
 
-Currently, two official plugins are available:
+- React
+- Vite
+- Redux & Redux Toolkit
+- React Router DOM
+- Bootstrap
+- AOS (Animate On Scroll)
+- Atropos (3D parallex)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+Une application web moderne de livraison de nourriture développée avec React, Vite et Redux.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Fonctionnalités
+
+- Liste et détails des restaurants
+- Menu dynamique avec filtrage
+- Panier d'achat avec Redux
+- Design responsive
+- Déploiement avec Vite
+
+## Structure du projet
+
+```
+front_end/
+  public/           # Fichiers statiques (images, menu_data.json, etc.)
+  src/
+	 assets/         # Images et icônes
+	 componants/     # Composants React
+	 redux/          # Slices Redux et store
+	 styles/         # Fichiers CSS
+	 App.jsx         # Composant principal
+	 main.jsx        # Point d'entrée
+  package.json      # Dépendances et scripts du projet
+  vite.config.js    # Configuration Vite
+```
+
+## Pour commencer
+
+1. **Installer les dépendances**
+
+   npm install
+
+   ```
+
+   ```
+
+2. **Lancer le serveur de développement**
+
+   npm run dev
+
+   ```
+
+   ```
+
+3. **Construire pour la production**
+
+   npm run build
+
+   ```
+
+   ```
+
+4. **Déployer**
+
+   npm run deploy
+
+   ```
+
+   ```
+
+## Remarques
+
+- Si vous déployez dans un sous-répertoire, configurez l'option `base` dans `vite.config.js` et `basename` dans React Router.
+- Les fichiers statiques doivent être placés dans le dossier `public` et référencés avec `import.meta.env.BASE_URL`.
+- ⚠️ J'utilise une API avec une limite d'utilisation. Après un certain temps, il se peut que la liste des restaurants et des menus ne s'affiche plus temporairement.
