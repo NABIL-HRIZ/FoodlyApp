@@ -6,6 +6,9 @@ import service4 from '../assets/service-4.jpg'
 
 import '../styles/Services.css'
 
+import Atropos from 'atropos/react';
+
+
 const Services = () => {
   return (
     <div className='services-section'>
@@ -13,27 +16,76 @@ const Services = () => {
         <p>Goûtez l’excellence dans chaque bouchée ,qualité et goût, à chaque commande.</p>
           <div className="services-item">
             <div className=' service-card'>
-                <img src={service1} alt="" />
-                <h2>Snacks & Fast Food</h2>
+                 <Atropos
+                       className="my-atropos"
+        activeOffset={50}
+        shadowScale={1.05}
+        duration={400}
+        rotateTouch="scroll-y"  
+        rotateXMax={30}
+        rotateYMax={30}
+                    >
+                      <div className="card">
+                        <img src={service1} />
+                        <h2>Snacks & Fast Food</h2>
+                      </div>
+                    </Atropos>
 
             </div>
 
             <div className='service-card'>
+                <Atropos
+                       className="my-atropos"
+        activeOffset={50}
+        shadowScale={1.05}
+        duration={400}
+        rotateTouch="scroll-y"  
+        rotateXMax={30}
+        rotateYMax={30}
+                    >
+                    <div className="card">
                 <img src={service2} alt="" />
                 <h2>Déjeuner , Dîner</h2>
+                    </div>
+        </Atropos>
+               
 
             </div>
 
             <div className='service-card'>
-                <img src={service4} alt="" />
+               <Atropos
+                       className="my-atropos"
+        activeOffset={50}
+        shadowScale={1.05}
+        duration={400}
+        rotateTouch="scroll-y"  
+        rotateXMax={30}
+        rotateYMax={30}
+                    >
+                    <div className="card">
+                  <img src={service4} alt="" />
                 <h2>Menus spéciaux</h2>
-
+                    </div>
+               
+</Atropos>
 
             </div>
 
             <div className='service-card'>
-                <img src={service3} alt="" />
+                <Atropos
+                       className="my-atropos"
+        activeOffset={50}
+        shadowScale={1.05}
+        duration={400}
+        rotateTouch="scroll-y"  
+        rotateXMax={30}
+        rotateYMax={30}
+                    >
+                      <div className="card">
+ <img src={service3} alt="" />
                 <h2>Boissons & Jus frais</h2>
+                      </div>
+               </Atropos>
 
 
             </div>

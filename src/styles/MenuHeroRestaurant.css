@@ -111,7 +111,6 @@
   transform: translateY(-2px);
 }
 
-/* === Animations === */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -120,5 +119,42 @@
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@media (max-width: 768px) {
+  .menu-hero-section {
+    min-height: 60vh;
+    margin: 40px auto;
+  }
+
+  .menu-hero-content {
+    padding: 1rem;
+    max-width: 95%;
+  }
+
+  .menu-restaurant-logo {
+    width: 90px;
+    height: 90px;
+  }
+
+  .menu-restaurant-title {
+    font-size: 2rem;
+  }
+
+  .menu-rating-stars {
+    font-size: 1.2rem;
+  }
+
+  .menu-rating-text {
+    font-size: 0.85rem;
+  }
+
+  .menu-cuisine-tags {
+    gap: 0.4rem;
+  }
+
+  .menu-cuisine-tag {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.7rem;
   }
 }

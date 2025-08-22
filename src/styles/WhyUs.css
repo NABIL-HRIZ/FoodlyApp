@@ -107,3 +107,54 @@ h2 {
 }
 
 
+@media (max-width: 768px) {
+  .why-us-section {
+    padding: 50px 15px;
+  }
+
+  .why-us-container {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .why-us-img {
+    top: 0;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .why-us-content {
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .highlight {
+    font-size: 1rem;
+    padding: 15px;
+    margin-bottom: 30px;
+  }
+
+  .why-us-list {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .list-item {
+    flex: none;
+    width: 100%;
+    text-align: left;
+  }
+
+  .list-text {
+    font-size: 1rem;
+  }
+}

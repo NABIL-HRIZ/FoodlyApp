@@ -47,3 +47,25 @@ margin: 50px auto;
 .swiper-button-next {
   display: none;
 }
+
+@media (max-width: 768px) {
+  .swiper {
+    height: 60vh;
+    margin: 20px auto;
+  }
+
+  .rest-info {
+    padding: 10px 15px;
+    max-width: 95%;
+  }
+
+  .rest-info h2 {
+    font-size: 2rem;
+    width: 100%;
+  }
+
+  .rest-info p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+}

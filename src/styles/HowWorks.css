@@ -55,3 +55,43 @@
   color: #555;
   line-height: 1.4;
 }
+@media (max-width: 768px) {
+  .how-section {
+    padding: 40px 15px;
+  }
+
+  .how-section h1 {
+    font-size: 2rem;
+  }
+
+  .how-section p {
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+  }
+
+  .how-content {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .how-card {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    padding: 15px;
+  }
+
+  .how-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+  }
+
+  .how-card h3 {
+    font-size: 1rem;
+  }
+
+  .how-card p {
+    font-size: 0.9rem;
+  }
+}

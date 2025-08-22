@@ -180,31 +180,70 @@
 }
 
 
+
 @media (max-width: 768px) {
+  .hero-container {
+    margin:80px auto;
+    padding: 10px;
+  }
+
   .grid-parent {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction:column-reverse;
+    gap: 15px;
+    height: auto;
   }
-  
-  .chef-card, 
-  .yummy-card, 
-  .hero-main {
-    grid-column: 1;
+
+  .chef-card,
+  .yummy-card,
+  .div3 {
+    grid-column: auto;
+    grid-row: auto;
+    width: 100%;
+    padding: 15px;
+    border-radius: 20px;
   }
-  
-  .chef-card {
-    grid-row: 1;
+
+  .chef-card h3,
+  .yummy-card h3,
+  .div3 h3 {
+    font-size: 1.5rem;
   }
-  
-  .yummy-card {
-    grid-row: 2;
+
+  .chef-card p,
+  .yummy-card p,
+  .div3 p {
+    font-size: 0.9rem;
   }
-  
-  .hero-main {
-    grid-row: 3;
+
+  .image-container,
+  .hero-image-container {
+    width: 100%;
+    height: auto;
   }
-  
+
+  .hero-image {
+    width: 100%;
+    max-height: 250px;
+  }
+
+  .behind-image {
+    font-size: 3rem;
+    top: 15%;
+  }
+
   .hero-content {
     flex-direction: column;
+    align-items: center;
     gap: 10px;
+    padding: 10px;
+  }
+
+  .hero-content h4 {
+    font-size: 1.5rem;
+  }
+
+  .hero-content h5 {
+    font-size: 1rem;
   }
 }

@@ -18,7 +18,7 @@
 
 .services-item {
   display: flex;
-  flex-wrap: wrap !important;       /* allow cards to wrap to next line */
+  flex-wrap: wrap !important;    
   justify-content: center;
   gap: 20px;
 }
@@ -31,6 +31,7 @@
   width: 220px;
   height:320px;
   transition: transform 0.3s ease;
+  
 }
 
 .service-card img {
@@ -57,6 +58,45 @@
   transform: scale(1.05);
 }
 
+.my-atropos {
+  width:100%;
+  height:auto;
+}
 
 
+@media (max-width: 768px) {
+  .services-section {
+    padding: 80px 15px;
+  }
 
+  .services-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .services-section p {
+    font-size: 1rem;
+    margin-bottom: 25px;
+  }
+
+  .services-item {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .service-card {
+    width: 100%;
+    max-width: 350px; 
+    height: auto;
+  }
+
+  .service-card img {
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .service-card:nth-child(odd),
+  .service-card:nth-child(even) {
+    transform: none; 
+  }
+}

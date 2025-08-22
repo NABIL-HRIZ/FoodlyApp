@@ -7,7 +7,7 @@ import dessert from '../assets/service-3.jpg'
 import breakfast from '../assets/service-1.jpg'
 import Snacks from '../assets/service-4.jpg'
 import boisson from '../assets/service-3.jpg'
-import promo_img from '../assets/service-1.jpg'
+import promo_img from '../assets/promotion.jpg'
 const MenuRestaurant = () => {
   const { restaurantsId } = useParams();
   const [data, setData] = useState(null);

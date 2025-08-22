@@ -256,3 +256,71 @@
   font-size:25px;
 }
 
+@media (max-width: 768px) {
+  .menu-restaurant-container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+  }
+
+  .menu-filter,
+  .menu-restaurant-cart,
+  .menu-items {
+    width: 100%;
+    position: relative;
+    top: 0;
+    padding: 15px;
+  }
+
+  .menu-restaurant-promo-img {
+    height: 250px;
+  }
+
+  .menu-restaurant-promo-img img {
+    height: 100%;
+  }
+
+  .menu-restaurant-promo-img h4 {
+    font-size: 18px;
+     writing-mode: horizontal-tb;
+    text-orientation: mixed;
+    left:40%;  
+    top: 50%;
+  }
+
+  .menu-restaurant-promo-img span {
+    font-size: 25px;
+    left:37%;
+    top:65%;
+  }
+
+  .menu-category h2 {
+    font-size: 20px;
+  }
+
+  .menu-category ul {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .menu-category h3 {
+    font-size: 1rem;
+  }
+
+  .menu-category p {
+    font-size: 0.8rem;
+    width: 100%;
+  }
+
+  .menu-category span {
+    font-size: 16px;
+  }
+
+  .cart-total {
+    max-width: 100%;
+  }
+
+  .cart-total .total {
+    font-size: 18px;
+  }
+}

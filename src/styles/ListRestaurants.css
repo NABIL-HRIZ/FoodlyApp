@@ -134,18 +134,45 @@
   background: #c0392b;
 }
 
-/* Responsive design */
+
 @media (max-width: 768px) {
   .restaurant-list-container {
-    padding: 1rem;
+    padding: 15px;
   }
-  
+
   .page-title {
     font-size: 2rem;
+    margin-bottom: 1.5rem;
   }
-  
+
   .restaurants-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 15px;
+  }
+
+  .restaurant-card {
+    width: 100%;
+  }
+
+  .restaurant-image-container {
+    height: 180px; 
+  }
+
+  .restaurant-name {
+    font-size: 1.3rem;
+  }
+
+  .restaurant-rating {
+    gap: 0.3rem;
+  }
+
+  .cuisine-tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .menu-button {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
   }
 }

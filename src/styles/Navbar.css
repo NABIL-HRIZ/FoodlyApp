@@ -81,3 +81,41 @@
   font-weight: 700;
   color: #333;
 }
+@media (max-width: 768px) {
+  .custom-navbar {
+    padding: 0.5rem 15px;
+  }
+
+  .logo-img {
+    height: 32px;
+    margin-right: 6px;
+  }
+
+  .brand-text {
+    font-size: 22px;
+  }
+
+ .navbar-nav {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0 !important;
+    gap: 10px;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 1rem;
+    margin: 5px 0;
+  }
+
+  .cart-link i {
+    font-size: 1.1rem;
+  }
+
+  .cart-count {
+    top: -8px;
+    right: -8px;
+    font-size: 0.7rem;
+    padding: 2px 5px;
+  }
+}
