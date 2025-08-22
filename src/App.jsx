@@ -17,6 +17,7 @@ import WhatsappButton from './componants/WhatsappButton';
 import MenuHeroRestaurant from './componants/MenuHeroRestaurant';
 import MenuRestaurant from './componants/MenuRestaurant';
 import StartFromTheTop from './componants/StartFromTheTop';
+import DeliverySection from './componants/DeliverySection';
 const App = () => {
 
 
@@ -32,6 +33,7 @@ const App = () => {
       <Route path='/' element={
         <>
          <HeroSection />
+         <DeliverySection />
          <Services />
          <WhyUs />
          <Gallery />
