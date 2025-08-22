@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchRestaurants } from '../redux/restaurantsSlice';
 import '../styles/ListRestaurants.css'; 
 import { Link} from 'react-router-dom';
 import img_restaurant1 from '../assets/rest-1.jpg'
@@ -12,6 +14,10 @@ import img_restaurant5 from '../assets/rest-5.jpg'
 
 const ListRestaurants = () => {
 
+   const dispatch = useDispatch();
+  const restaurants = useSelector(state => state.restaurants.data);
+  const status = useSelector(state => state.restaurants.status);
+
 
     const restaurantsImage=[img_restaurant1,img_restaurant2,img_restaurant3,img_restaurant4,img_restaurant5];
 
@@ -19,44 +25,20 @@ const ListRestaurants = () => {
        return restaurantsImage[Math.floor(Math.random() * restaurantsImage.length)];
     }
 
-  const [restaurants, setRestaurants] = useState([]);
+ 
 
   useEffect(() => {
-    const fetchRestaurants = async () => {
-      const cached = localStorage.getItem('restaurants');
-      if (cached) {
-        setRestaurants(JSON.parse(cached).slice(0, 20));
-        return;
-      }
-
-      const url = 'https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchRestaurants?locationId=304554';
-      const options = {
-        method: 'GET',
-        headers: {
-          'x-rapidapi-key': '38176af0b8msh3c09d796c566276p1ddb18jsn4545ae4663b7',
-          'x-rapidapi-host': 'tripadvisor16.p.rapidapi.com'
-        }
-      };
-
-      try {
-        const response = await fetch(url, options);
-        const result = await response.json();
-        const restaurantsData = (result.data.data || []).slice(0,20);
-        setRestaurants(restaurantsData);
-        localStorage.setItem('restaurants', JSON.stringify(restaurantsData));
-      } catch (error) {
-        console.error(error);
-      } 
-    };
-
-    fetchRestaurants();
-  }, []);
+    if (status === 'idle') {
+      dispatch(fetchRestaurants());
+    }
+  }, [status, dispatch]);
 
  
 
   return (
     <div className="restaurant-list-container">
       <h1 className="page-title">Découvrir Les Restaurants</h1>
+       {status === 'loading' && <p>Loading...</p>}
       
       <div className="restaurants-grid">
         {restaurants.map((restaurant, index) => (

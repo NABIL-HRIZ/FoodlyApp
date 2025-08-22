@@ -1,5 +1,7 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+   import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { fetchRestaurants } from '../redux/restaurantsSlice';
 import { useParams } from 'react-router-dom';
 import '../styles/MenuHeroRestaurant.css'; 
 
@@ -10,27 +12,29 @@ import img_restaurant4 from '../assets/rest-4.jpg';
 import img_restaurant5 from '../assets/rest-5.jpg';
 
 const MenuHeroRestaurant = () => {
-    const { restaurantsId } = useParams();
     const restaurantsImage = [img_restaurant1, img_restaurant2, img_restaurant3, img_restaurant4, img_restaurant5];
-    const [restaurant, setRestaurant] = useState(null);
-
     const getRandomImage = () => {
         return restaurantsImage[Math.floor(Math.random() * restaurantsImage.length)];
     }
 
-useEffect(() => {
-  const cached = localStorage.getItem("restaurants");
-  if (cached) {
-    const restaurantsData = JSON.parse(cached);
-    const findRestaurant = restaurantsData.find(r => r.restaurantsId === restaurantsId);
-    setRestaurant(findRestaurant);
-  }
-}, [restaurantsId]);
+  const { restaurantsId } = useParams();
+  const dispatch = useDispatch();
+  const restaurants = useSelector(state => state.restaurants.data);
+
+  useEffect(() => {
+    if (!restaurants.length) {
+      dispatch(fetchRestaurants());
+    }
+  }, [dispatch, restaurants.length]);
+
+  const restaurant = restaurants.find(r => r.restaurantsId === restaurantsId);
+
+  if (!restaurant) return <p>Loading...</p>;
 
 
     return (
         <>
-            {restaurant && (
+          
                 <div className="menu-hero-section" style={{ backgroundImage: `url(${getRandomImage()})` }}>
                     <div className="menu-hero-content">
                         <div className="menu-restaurant-image-container">
@@ -61,7 +65,7 @@ useEffect(() => {
                         </div>
                     </div>
                 </div>
-            )}
+           
         </>
     );
 }

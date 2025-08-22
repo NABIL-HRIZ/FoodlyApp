@@ -1,5 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { addToCart } from '../redux/cartSlice';
+import { removeFromCart } from '../redux/cartSlice';
 import '../styles/MenuRestaurant.css'; 
 import dinner from '../assets/service-2.jpg'
 import entree from '../assets/food.jpg'
@@ -9,30 +12,7 @@ import Snacks from '../assets/service-4.jpg'
 import boisson from '../assets/service-3.jpg'
 import promo_img from '../assets/promotion.jpg'
 const MenuRestaurant = () => {
-  const { restaurantsId } = useParams();
-  const [data, setData] = useState(null);
-   const [filteredCategory, setFilteredCategory] = useState("all");
-  const [cart, setCart] = useState(() => {
-  return JSON.parse(localStorage.getItem('cart')) || [];
-});
-
-useEffect(() => {
-  localStorage.setItem('cart', JSON.stringify(cart));
-}, [cart]);
-
-
-const addToCart = (dish) => {
-  setCart(prevCart => [...prevCart, dish]);
-};
-
-const removeFromCart = (id) => {
-  setCart(prevCart => prevCart.filter(item => item.id !== id));
-};
-
-
-const total = cart.reduce((init, added) => init + added.dish_price, 0).toFixed(2);
-
-  const getCategoryImage=
+   const getCategoryImage=
     {
         'dinner':dinner,
         'Entrées':entree,
@@ -41,19 +21,32 @@ const total = cart.reduce((init, added) => init + added.dish_price, 0).toFixed(2
         'Snacks':Snacks,
         'Boissons':boisson
     }
-  
+
+ const { restaurantsId } = useParams();
+  const dispatch = useDispatch();
+  const restaurant = useSelector(state => state.restaurants.data.find(r => r.restaurantsId === restaurantsId));
+  const [data, setData] = useState(null);
+  const [filteredCategory, setFilteredCategory] = useState('all');
+  const cart = useSelector(state => state.cart.items);
+
+
   useEffect(() => {
-    const fetchMenuData = async () => {
-      const url = '/menu_data.json';
-      const response = await fetch(url);
-      const menuData = await response.json();
-      const restaurantMenu = menuData.find(
-        item => item.restaurant_id === restaurantsId
-      );
-      setData(restaurantMenu);
+    const fetchMenu = async () => {
+      const menuData = await (await fetch('/menu_data.json')).json();
+      setData(menuData.find(item => item.restaurant_id === restaurantsId));
     };
-    fetchMenuData();
+    fetchMenu();
   }, [restaurantsId]);
+
+  if(!restaurant || !data) return <p>Loading...</p>;
+
+
+
+
+const total = cart.reduce((init, added) => init + added.dish_price, 0).toFixed(2);
+
+ 
+ 
 
       const handleFilterChange = (e) => {
     setFilteredCategory(e.target.value);
@@ -100,7 +93,7 @@ const total = cart.reduce((init, added) => init + added.dish_price, 0).toFixed(2
                 </div>
               <ul>
                 {category.items.map(dish => (
-                  <li key={dish.id}  onClick={() => addToCart(dish)}>
+                  <li key={dish.id}  onClick={() =>dispatch(addToCart(dish))}>
                     <div className='dish-infos'>
                     <h3>{dish.dish_name}</h3> 
                    <p>{dish.dish_description.slice(1,150)}</p>
@@ -133,7 +126,7 @@ const total = cart.reduce((init, added) => init + added.dish_price, 0).toFixed(2
           <span>${item.dish_price.toFixed(2)}</span>
           <span 
             style={{color:'red', cursor:'pointer', marginLeft:'10px'}} 
-            onClick={() => removeFromCart(item.id)}
+            onClick={() =>dispatch(removeFromCart(item.id))}
           >
             X
           </span>
