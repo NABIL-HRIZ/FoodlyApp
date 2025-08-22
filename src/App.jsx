@@ -23,7 +23,7 @@ const App = () => {
   return (
     
     <>
-    <Router>
+  <Router basename="/FoodlyApp">
 
      <Navbar />
    <WhatsappButton />

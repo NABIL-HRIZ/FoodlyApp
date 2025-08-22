@@ -12,7 +12,7 @@ export const fetchRestaurants = createAsyncThunk(
     const options = {
       method: 'GET',
       headers: {
-        'x-rapidapi-key': '38176af0b8msh3c09d796c566276p1ddb18jsn4545ae4663b7',
+        'x-rapidapi-key': '4f8a40e87fmshb65e4d6ffa06ff7p158f48jsnc8c12a189782',
         'x-rapidapi-host': 'tripadvisor16.p.rapidapi.com'
       }
     };
